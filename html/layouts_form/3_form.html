@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <form action="form.js", method="get", onsubmit="submitForm(event)">
-        사용자 : <br><input type="text" name="username"><br>
-        비밀번호 : <br><input type="password" name="password">
+    <form method="post", onsubmit="submitForm(event)">
+        <label> 사용자 : </label> <input type="text" name="username"> <br>
+        <label> 비밀번호 : </label><input type="password" name="password">
         
-        <!-- <br>
+        <br>
         <input type="radio" name="lecture" value="html" checked> HTML <br>
         <input type="radio" name="lecture" value="css"> CSS <br>
         <input type="radio" name="lecture" value="java"> JAVA <br>
@@ -39,9 +39,10 @@
         </textarea>
 
         <br>
+        
         <button type="button" onclick="alert('버튼을 클릭하셨군요!')">
             버튼을 눌러주세요.
-        </button> -->
+        </button>
         
         <br>
         <input type="submit" value="전송">

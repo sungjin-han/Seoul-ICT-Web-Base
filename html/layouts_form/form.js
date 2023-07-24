@@ -4,6 +4,6 @@ function submitForm(event) {
     var username = document.getElementsByName('username')[0].value;
     var password = document.getElementsByName('password')[0].value;
     
-    var url = "3_form_res.html?username=" + username + "&password=" + password;
-    window.location.href = url;
+    var path = "3_form_res.html?username=" + username + "&password=" + password;
+    window.location.href = path;
   }

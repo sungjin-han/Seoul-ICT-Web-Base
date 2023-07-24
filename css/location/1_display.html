@@ -5,14 +5,23 @@
 	<meta charset="UTF-8">
 	<title>CSS Display</title>
 	<style>
-		div { width: 100px; height: 50px; }
+		div { width: 100px; height: 100px; }
 
 		.first { background-color: aqua; }
 		.second { background-color: green; }
 		.third { background-color: yellow; }
 
 		.inline { display: inline; }
-		.inline-block { display: inline-block; }
+		.inline-block { 
+			display: inline-block; 
+			text-align: center;
+		}
+		.inline-block span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		
 	</style>
 </head>
 
@@ -31,7 +40,7 @@
 	<div class="third inline">인라인</div><br><br>
 
 	<p>아래에 나오는 div 요소는 모두 display 속성값이 인라인-블록입니다.</p>
-	<div class="first inline-block">인라인-블록</div>
+	<div class="first inline-block"> <span>인라인 블록</span></div>
 	<div class="second inline-block">인라인-블록</div>
 	<div class="third inline-block">인라인-블록</div>
 
