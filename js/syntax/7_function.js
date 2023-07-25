@@ -38,21 +38,42 @@ globalNum();  // 함수 globalNum()을 호출함.
 console.log("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다."); // 20
 
 
-//함수 호이스팅(hoisting)
-var globalNum = 10;     // globalNum을 전역 변수로 선언함.
-function printNum() {
-    console.log("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "입니다.<br>"); // ①
-    var globalNum = 20; // globalNum을 지역 변수로 선언함. // ②
-    console.log("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "입니다.<br>");
-}
-printNum();
+/*
+JavaScript에서 호이스팅(hoisting)이란, 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미합니다. 
+var로 선언한 변수의 경우 호이스팅 시 undefined로 변수를 초기화합니다. 
+반면 let과 const로 선언한 변수의 경우 호이스팅 시 변수를 초기화하지 않습니다.
+*/
 
-//함수 호이스팅 후
-var globalNum = 10;
-function printNum() {
-    var globalNum; // 함수 호이스팅에 의해 변수의 선언 부분이 함수의 맨 처음 부분으로 이동됨.
-    console.log("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "입니다.<br>");
-    globalNum = 20;
-    console.log("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "입니다.<br>");
+//1
+function catName(name) {
+    console.log("제 고양이의 이름은 " + name + "입니다");
+  }
+  
+catName("호랑이");
+
+
+//2
+catName("클로이");
+function catName(name) {
+  console.log("제 고양이의 이름은 " + name + "입니다");
 }
-printNum();
+/*
+결과: "제 고양이의 이름은 클로이입니다"
+*/
+
+//3
+console.log(num); // 호이스팅한 var 선언으로 인해 undefined 출력
+var num; // 선언
+num = 6; // 초기화
+
+//4
+console.log(num); // ReferenceError
+num = 6; // 초기화
+
+//let의 시간 사각지대
+function do_something() {
+    console.log(bar); // undefined
+    console.log(foo); // ReferenceError
+    var bar = 1;
+    let foo = 2;
+  }
