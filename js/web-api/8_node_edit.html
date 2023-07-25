@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Node Handle</title>
+
+    <script>
+        // nodeValue
+		var para = document.getElementById("text");		// 아이디가 "text"인 요소를 선택함.
+		function changeText() {
+			para.firstChild.nodeValue = "텍스트 변경 완료!";
+		}
+
+        //setAttribute
+        var para;
+		function changeAttribute() {
+			// 모든 <p> 요소중에서 첫 번째 요소에 클래스 속성값으로 "para"를 설정함.
+			document.getElementsByTagName("p")[0].setAttribute("class", "para");
+			// 클래스가 설정되면 해당 클래스에 설정되어 있던 스타일이 자동으로 적용됨.
+		}
+
+        //replaceChild
+        var parent = document.getElementById("parent");	// 부모 노드를 선택함.
+		var first = document.getElementById("first");
+		var third = document.getElementById("third");
+		function changeNode() {
+			parent.replaceChild(third, first);			// first 요소를 삭제하고, 그 대신 third 요소를 삽입함.
+		}
+	</script>
+</head>
+
+<body>
+    <!-- nodeValue -->
+	<h1>텍스트 노드의 값 변경</h1>
+	<p id="text">이 텍스트를 변경하고 싶어요!</p>
+	<button onclick="changeText()">텍스트 변경!</button>
+
+    <!-- setAttribute -->
+    <h1>속성 노드의 값 변경</h1>
+	<p>속성 노드의 값을 변경하고 싶어요!</p>
+	<button onclick="changeAttribute()">속성 변경!</button>
+
+	<!-- replaceChild -->
+    <h1>요소 노드의 교체</h1>
+	<div id="parent">
+		<p id="first">첫 번째 요소입니다.</p>
+		<p>두 번째 요소입니다.</p>
+	</div>
+	<p id="third">세 번째 요소입니다.</p>
+	<button onclick="changeNode()">요소 노드 교체!</button>
+
+	
+</body>
+
+</html>

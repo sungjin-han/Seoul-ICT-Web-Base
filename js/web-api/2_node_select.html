@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Node Access</title>
+
+    <script>
+        //Node Name
+		// HTML 문서의 모든 자식 노드 중에서 두 번째 노드의 이름을 선택함.
+		document.getElementById("document").innerHTML = document.childNodes[1].nodeName;			// HTML
+		
+		// html 노드의 모든 자식 노드 중에서 첫 번째 노드의 이름을 선택함.
+		document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0].nodeName;	// HEAD
+
+
+        // NodeValue
+        // 아이디가 "heading"인 요소의 첫 번째 자식 노드의 노드값을 선택함.
+		var headingText = document.getElementById("heading").firstChild.nodeValue;
+		
+		document.getElementById("text1").innerHTML = headingText;
+		document.getElementById("text2").firstChild.nodeValue = headingText;
+
+        // NodeType
+        // 아이디가 "heading"인 요소의 첫 번째 자식 노드의 타입을 선택함.
+		var headingType = document.getElementById("heading").firstChild.nodeType;
+		
+		document.getElementById("head").innerHTML = headingType;			// 3
+		document.getElementById("document").innerHTML = document.nodeType;	// 9
+
+	</script>
+</head>
+
+<body>   
+    <!-- nodeName  -->
+	<h1>nodeName 프로퍼티</h1>
+	<p id="document"></p>
+	<p id="html"></p>
+
+    <!-- nodeValue -->
+    <h1 id="heading">nodeValue 프로퍼티</h1>
+	<p id="text1">텍스트</p>
+	<p id="text2">텍스트</p>
+
+    <!-- nodeType -->
+    <h1 id="heading">nodeType 프로퍼티</h1>
+	<p id="head"></p>
+	<p id="document"></p>
+
+    
+	
+	
+	
+</body>
+
+</html>

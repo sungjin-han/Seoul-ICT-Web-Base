@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Node Manage</title>
+
+    <script>
+		function removeNode() {
+			var parent = document.getElementById("list");		// 아이디가 "list"인 요소를 선택함.
+			var removedItem = document.getElementById("item");	// 아이디가 "item"인 요소를 선택함.
+			parent.removeChild(removedItem);					// 지정된 요소를 삭제함.
+		}
+        function removeAttributeNode() {
+			var text = document.getElementById("text");		// 아이디가 "text"인 요소를 선택함.
+			text.removeAttribute("style");					// 해당 요소의 "style" 속성을 제거함.
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<h1>removeChild() 메소드</h1>
+	<button onclick="removeNode()">요소 노드 삭제!</button>
+	<div id="list">
+		<p>HTML</p>
+		<p id="item">CSS</p>
+		<p>JavaScript</p>
+	</div>
+
+
+    <h1>removeAttribute() 메소드</h1>
+	<button onclick="removeAttributeNode()">속성 노드 삭제!</button>
+	<p id="text" style="color:red; background-color:lemonchiffon;">이 단락의 속성이 제거될 것입니다.</p>
+	
+	
+	
+</body>
+
+</html>
