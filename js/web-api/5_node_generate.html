@@ -4,8 +4,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>JavaScript Node Manage</title>
+</head>
 
-    <script>
+<body>
+
+	<h1>요소 노드의 생성</h1>
+	<p id="text">새로운 단락을 생성하여 이 단락 앞에 추가할 것입니다.</p>
+	<button onclick="createNode()">요소 노드 생성!</button>
+
+
+    <h1>속성 노드의 생성</h1>
+	<p id="text">이 단락에 새로운 속성을 추가할 것입니다.</p>
+	<button onclick="createAttributeNode()">속성 노드 생성!</button>
+
+    <h1>텍스트 노드의 생성</h1>
+	<button onclick="createText()">텍스트 노드 생성!</button>
+	<p id="text"></p>
+
+	<script>
 		function createNode() {
 			var criteriaNode = document.getElementById("text");	// 기준이 되는 요소로 아이디가 "text"인 요소를 선택함.
 			var newNode = document.createElement("p");			// 새로운 <p> 요소를 생성함.
@@ -26,22 +42,6 @@
 			elementNode.appendChild(newText);								// 해당 요소의 자식 노드로 추가함.
 		}
 	</script>
-</head>
-
-<body>
-
-	<h1>요소 노드의 생성</h1>
-	<p id="text">새로운 단락을 생성하여 이 단락 앞에 추가할 것입니다.</p>
-	<button onclick="createNode()">요소 노드 생성!</button>
-
-
-    <h1>속성 노드의 생성</h1>
-	<p id="text">이 단락에 새로운 속성을 추가할 것입니다.</p>
-	<button onclick="createAttributeNode()">속성 노드 생성!</button>
-
-    <h1>텍스트 노드의 생성</h1>
-	<button onclick="createText()">텍스트 노드 생성!</button>
-	<p id="text"></p>
 	
 	
 </body>
